@@ -1,91 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campus Events</title>
 
     <!-- Bootstrap -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Your CSS -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <!-- NAVIGATION BAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Campus Life App</a>
+    <!-- NAVIGATION -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold" href="index.html">Campus Life App</a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="events.html">Events</a></li>
-                    <li class="nav-item"><a class="nav-link" href="clubs.html">Clubs</a></li>
-                </ul>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="events.html">Events</a></li>
+                        <li class="nav-item"><a class="nav-link" href="clubs.html">Clubs</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <!-- PAGE CONTENT -->
-    <div class="container mt-4">
-        <h1 class="mb-4">Campus Events</h1>
+    <!-- MAIN CONTENT -->
+    <main class="container mt-4">
+
+        <h1 class="mb-4 text-center">Campus Events</h1>
 
         <!-- EVENT CALENDAR -->
-        <div class="card p-3 mb-4">
-            <h4>Event Calendar</h4>
-            <p>Calendar UI Placeholder </p>
-            <div class="placeholder-glow">
-                <div class="placeholder col-12" style="height: 200px;"></div>
-            </div>
-        </div>
+        <section aria-labelledby="calendar-header" class="mb-5">
+            <h2 id="calendar-header" class="mb-3">Event Calendar</h2>
 
-        <!-- FILTERS -->
-        <div class="mb-3">
-            <h5>Filter Events</h5>
-            <div class="d-flex gap-3">
-                <div>
-                    <input type="radio" name="filter" id="filterCategory">
-                    <label for="filterCategory">By Category</label>
-                </div>
-                <div>
-                    <input type="radio" name="filter" id="filterDate">
-                    <label for="filterDate">By Date</label>
+            <div class="card shadow-sm p-3">
+                <p class="mb-2">A interactive calendar will be added here soon!</p>
+
+                <div class="placeholder-glow">
+                    <div class="placeholder col-12" style="height: 200px;"></div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- UPCOMING EVENTS LIST -->
-        <h3 class="mt-4">Upcoming Events</h3>
-        <div id="eventsList" class="row g-3">
+        <!-- EVENT FILTERS -->
+        <section aria-labelledby="filter-header" class="mb-5">
+            <h2 id="filter-header" class="mb-3">Filter Events</h2>
 
-            <!-- EVENT CARD -->
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Event Name</h5>
+            <div class="card p-3 shadow-sm">
+                <div class="d-flex flex-wrap gap-4">
+
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="eventFilter" id="filterCategory" value="category">
+                        <label for="filterCategory" class="form-check-label">By Category</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="eventFilter" id="filterDate" value="date">
+                        <label for="filterDate" class="form-check-label">By Date</label>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- EVENTS FROM API -->
+        <section aria-labelledby="upcoming-events-header">
+            <h2 id="upcoming-events-header" class="mb-4">Upcoming Events</h2>
+
+            <div id="eventsList" class="row g-4">
+                <!-- Dynamic JS-generated event cards will appear here -->
+            </div>
+
+            <!-- Fallback example card if JS or API fails -->
+            <div id="fallbackEvent" class="col-md-4 mt-4">
+                <article class="card p-3 shadow-sm">
+                    <h3 class="h5">Event Name</h3>
                     <p>Date: TBD</p>
                     <p>Location: TBD</p>
                     <button class="btn btn-primary rsvpBtn">RSVP</button>
-                </div>
+                </article>
             </div>
+        </section>
 
-        </div>
-    </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-primary text-white text-center py-3 mt-5">
+        <p class="mb-0">&copy; 2025/2026 Campus Life App</p>
+    </footer>
 
     <!-- Bootstrap JS -->
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- JavaScript -->
+    <!-- Custom JS -->
     <script src="js/script.js"></script>
 
 </body>
