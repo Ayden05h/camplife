@@ -1,77 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campus Life Super App</title>
 
     <!-- Bootstrap CSS -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- stylesheet -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <!-- HEADER / NAVIGATION -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Campus Life App</a>
+    <!-- HEADER / NAV BAR -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                <a class="navbar-brand fw-bold" href="index.html">Campus Life App</a>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
-                    <li class="nav-item"><a class="nav-link" href="clubs.html">Clubs</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    <!-- PAGE CONTENT -->
-    <div class="container mt-4">
-        <h1>Welcome to the life around campus app</h1>
-        <p>MVP Home Page.</p>
-
-        <!-- Placeholder content -->
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h4>Announcements</h4>
-                    <p>content will go here.</p>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                        <li class="nav-item"><a class="nav-link" href="clubs.html">Clubs</a></li>
+                    </ul>
                 </div>
-            </div>
 
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h4>Events</h4>
-                    <p>Upcoming events preview.</p>
-                </div>
             </div>
+        </nav>
+    </header>
 
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h4>Clubs</h4>
-                    <p>Featured clubs preview.</p>
+    <!-- MAIN CONTENT -->
+    <main class="container mt-4">
+
+        <h1 class="text-center mb-4">Welcome to Campus Life</h1>
+        <p class="text-center mb-5">Stay connected with our events, clubs, and campus life — all in one place.</p>
+
+        <!-- WEATHER WIDGET (API) -->
+        <section aria-labelledby="weather-header" class="mb-5">
+            <h2 id="weather-header" class="mb-3">Current Campus Weather</h2>
+            <div id="weather" class="alert alert-info">Loading weather...</div>
+        </section>
+
+        <!-- FEATURE CARDS -->
+        <section aria-labelledby="features-header">
+            <h2 id="features-header" class="mb-3">Campus Highlights</h2>
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+                    <article class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h3 class="card-title h5">THE Announcements</h3>
+                            <p class="card-text">Important updates and reminders from around our campus.</p>
+                            <a href="#" class="btn btn-primary btn-sm disabled">Coming Soon</a>
+                        </div>
+                    </article>
                 </div>
+
+                <div class="col-md-4">
+                    <article class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h3 class="card-title h5">Events</h3>
+                            <p class="card-text">Preview our upcoming campus events and campus activities.</p>
+                            <a href="events.html" class="btn btn-primary btn-sm">View Events</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-4">
+                    <article class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h3 class="card-title h5">Clubs</h3>
+                            <p class="card-text">Explore our student clubs and get connected with people just like you!.</p>
+                            <a href="clubs.html" class="btn btn-primary btn-sm">Browse Clubs</a>
+                        </div>
+                    </article>
+                </div>
+
             </div>
-        </div>
-    </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-primary text-white text-center py-3 mt-5">
+        <p class="mb-0">&copy; 2025/2026 Campus Life App</p>
+    </footer>
 
     <!-- Bootstrap JS -->
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- JavaScript file -->
+    <!-- Custom JS -->
     <script src="js/script.js"></script>
 
 </body>
+
 </html>
