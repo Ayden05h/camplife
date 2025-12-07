@@ -1,89 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campus Clubs</title>
 
     <!-- Bootstrap -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- CSS -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <!-- NAVIGATION BAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Campus Life App</a>
+    <!-- NAVIGATION -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold" href="index.html">Campus Life App</a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="clubs.html">Clubs</a></li>
-                </ul>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="clubs.html">Clubs</a></li>
+                    </ul>
+                </div>
+
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <!-- PAGE CONTENT -->
-    <div class="container mt-4">
-        <h1 class="mb-4">Campus Clubs</h1>
+    <!-- MAIN CONTENT -->
+    <main class="container mt-4">
 
-        <!-- CLUB SEARCH BAR -->
-        <input type="text" class="form-control mb-4" placeholder="Search clubs...">
+        <h1 class="text-center mb-4">Our Amazing Campus Clubs</h1>
 
-        <!-- CLUB GRID -->
-        <div class="row g-3">
+        <!-- SEARCH BAR -->
+        <section aria-labelledby="club-search-header" class="mb-5">
+            <h2 id="club-search-header" class="visually-hidden">Search Our Clubs</h2>
 
-            <!-- CLUB CARD -->
-            <div class="col-md-4">
-                <div class="card p-3">
+            <input 
+                type="text" 
+                id="clubSearch" 
+                class="form-control" 
+                placeholder="Search clubs..."
+                aria-label="Search for clubs"
+            >
+        </section>
+
+        <!-- CLUB GRID (Dynamic from JS/API) -->
+        <section aria-labelledby="clubs-list-header">
+            <h2 id="clubs-list-header" class="mb-3">Explore Clubs</h2>
+
+            <div id="clubsContainer" class="row g-4">
+                <!-- Clubs will be loaded here dynamically by script.js -->
+            </div>
+
+            <!-- Fallback card if JS or API fails -->
+            <div id="fallbackClub" class="col-md-4 mt-4">
+                <article class="card shadow-sm p-3">
                     <div class="placeholder-glow">
                         <div class="placeholder col-12 mb-3" style="height: 120px;"></div>
                     </div>
-                    <h5>Club Name</h5>
-                    <p>Short description of the club goes here.</p>
+                    <h3 class="h5">Marvel Club</h3>
+                    <p>Come hangout and talk superheros with us</p>
                     <button class="btn btn-success joinBtn">Join Club</button>
-                </div>
+                </article>
             </div>
+        </section>
 
-        </div>
+        <!-- FEATURED CLUB SECTION -->
+        <section aria-labelledby="featured-club-header" class="mt-5">
+            <h2 id="featured-club-header" class="mb-3">Featured Club</h2>
 
-        <!-- FEATURED CLUB -->
-        <h3 class="mt-5">Featured Club</h3>
-        <div class="card p-3">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="placeholder-glow">
-                        <div class="placeholder col-12" style="height: 150px;"></div>
+            <article class="card shadow-sm p-3">
+                <div class="row">
+
+                    <div class="col-md-4 text-center">
+                        <div class="placeholder-glow">
+                            <div 
+                                class="placeholder col-12" 
+                                style="height: 150px;"
+                                aria-hidden="true">
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-8">
-                    <h4>Featured Club Name</h4>
-                    <p>club content</p>
-                    <button class="btn btn-primary">Learn More</button>
-                </div>
-            </div>
-        </div>
 
-    </div>
+                    <div class="col-md-8">
+                        <h3 class="h4">Football Club</h3>
+                        <p class="mb-3">A spotlight of our top student-led organization. Full of 200 members all excited for football!</p>
+                        <button class="btn btn-primary">Learn More</button>
+                    </div>
+
+                </div>
+            </article>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-primary text-white text-center py-3 mt-5">
+        <p class="mb-0">&copy; 2025/2026 Campus Life App</p>
+    </footer>
 
     <!-- Bootstrap JS -->
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Your JavaScript -->
+    <!-- Custom JS -->
     <script src="js/script.js"></script>
 
 </body>
